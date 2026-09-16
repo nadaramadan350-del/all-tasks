@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Async Tasks</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #20242b;
+      background: #f2efe8;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f2efe8 0%, #dbe7e4 100%);
+    }
+
+    main {
+      width: min(960px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0 0 0.75rem;
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 0;
+      color: #5f666d;
+      font-size: 1.1rem;
+    }
+
+    .tasks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    article {
+      min-height: 190px;
+      padding: 1.25rem;
+      border: 1px solid rgba(32, 36, 43, 0.14);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.74);
+      box-shadow: 0 14px 32px rgba(32, 36, 43, 0.08);
+    }
+
+    .number {
+      color: #b4523c;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    code {
+      padding: 0.12rem 0.3rem;
+      border-radius: 3px;
+      background: #e9e2d6;
+      font-family: Consolas, monospace;
+      font-size: 0.9em;
+    }
+
+    #output {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      border-left: 4px solid #b4523c;
+      background: #20242b;
+      color: #f7f1e7;
+      white-space: pre-wrap;
+      font-family: Consolas, monospace;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Promises, async/await &amp; fetch</h1>
+      <p>Open the browser console to see each task run. The results are also collected below.</p>
+    </header>
+
+    <section class="tasks" aria-label="Async JavaScript tasks">
+      <article>
+        <span class="number">Task 01</span>
+        <h2>Product information</h2>
+        <p>Find a product by ID with a Promise.</p>
+      </article>
+      <article>
+        <span class="number">Task 02</span>
+        <h2>Shipping cost</h2>
+        <p>Validate weight and calculate <code>weight * 5</code>.</p>
+      </article>
+      <article>
+        <span class="number">Task 03</span>
+        <h2>User registration</h2>
+        <p>Send a delayed verification email with <code>async/await</code>.</p>
+      </article>
+      <article>
+        <span class="number">Task 04</span>
+        <h2>User profile</h2>
+        <p>Fetch and display a profile from JSONPlaceholder.</p>
+      </article>
+    </section>
+
+    <pre id="output" aria-live="polite">Running tasks...</pre>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
